@@ -1,0 +1,65 @@
+from django.contrib.auth import get_user_model
+from django.core.validators import MinLengthValidator, MinValueValidator
+from django.db import models
+
+from brokentv.accounts.models import BrokenTvUser
+from brokentv.web.validators import validator_profile_username, validator_profile_name_only_letters
+
+UserModel = get_user_model()
+
+
+class Profile(models.Model):
+    USERNAME_MAX_LENGTH = 15
+    USERNAME_MIN_LENGTH = 2
+
+    FIRST_NAME_MAX_LENGTH = 25
+    FIRST_NAME_MIN_LENGTH = 2
+
+    LAST_NAME_MAX_LENGTH = 25
+    LAST_NAME_MIN_LENGTH = 2
+
+    AGE_MIN_VALUE = 0
+
+    username = models.CharField(
+        max_length=USERNAME_MAX_LENGTH,
+        validators=(
+            MinLengthValidator(USERNAME_MIN_LENGTH),
+            validator_profile_username,
+        ),
+        # unique=True,
+    )
+
+    first_name = models.CharField(
+        max_length=FIRST_NAME_MAX_LENGTH,
+        validators=(
+            MinLengthValidator(FIRST_NAME_MIN_LENGTH),
+            validator_profile_name_only_letters,
+        ),
+        blank=True,
+        null=True,
+    )
+
+    last_name = models.CharField(
+        max_length=LAST_NAME_MAX_LENGTH,
+        validators=(
+            MinLengthValidator(LAST_NAME_MIN_LENGTH),
+            validator_profile_name_only_letters,
+        ),
+        blank=True,
+        null=True,
+    )
+
+    age = models.IntegerField(
+        null=True,
+        blank=True,
+        validators=(
+            MinValueValidator(AGE_MIN_VALUE),
+        )
+    )
+
+    user = models.OneToOneField(
+        UserModel,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
+

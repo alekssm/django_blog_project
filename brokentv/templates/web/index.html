@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Home</h1>
+<div>{{ request.user }}</div>
+<a href="{% url 'register user' %}">Register</a>
+<a href="{% url 'login user' %}">Login</a>
+<a href="{% url 'logout user' %}">Logout</a>
+
+</body>
+</html>
