@@ -21,3 +21,5 @@ urlpatterns = [
     path('', include('brokentv.accounts.urls')),
     path('', include('brokentv.web.urls')),
 ]
+
+

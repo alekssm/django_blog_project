@@ -31,6 +31,13 @@ class Profile(models.Model):
         # unique=True,
     )
 
+    # photo = models.ImageField(
+    #     upload_to='pet_photos/',
+    #     null=False,
+    #     blank=True,
+    #     validators=(validate_file_less_than_5mb,),
+    # )
+
     bio = models.CharField(
         max_length=BIO_MAX_LEN,
         blank=True,
@@ -93,7 +100,7 @@ class Post(models.Model):
     SLUG_MAX_LEN = 250
 
     class Meta:
-        ordering = ["-publish_date"]
+        ordering = ["-date_created"]
 
     title = models.CharField(
         max_length=TITLE_MAX_LEN,
@@ -123,15 +130,15 @@ class Post(models.Model):
         auto_now=True,
     )
 
-    publish_date = models.DateTimeField(
-        blank=True,
-        null=True,
-    )
-
-    published = models.BooleanField(default=False)
+    # publish_date = models.DateTimeField(
+    #     blank=True,
+    #     null=True,
+    # )
+    #
+    # published = models.BooleanField(default=False)
 
     author = models.ForeignKey(
-        Profile,
+        UserModel,
         on_delete=models.PROTECT,
     )
 
@@ -140,6 +147,9 @@ class Post(models.Model):
         blank=True,
         null=True,
     )
+
+    def __str__(self):
+        return self.title
 
 
 

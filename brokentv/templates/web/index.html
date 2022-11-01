@@ -10,6 +10,7 @@
 <a href="{% url 'register user' %}">Register</a>
 <a href="{% url 'login user' %}">Login</a>
 <a href="{% url 'logout user' %}">Logout</a>
-
+{#<a href="{% url 'delete user' user.pk %}">Delete profile</a>#}
+<a href="{% url 'profile details' request.user.id %}">Profile</a>
 </body>
 </html>

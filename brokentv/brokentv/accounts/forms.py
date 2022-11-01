@@ -31,5 +31,21 @@ class UserRegistrationForm(UserCreationForm):
         return user
 
 
+# class EditUserProfileForm(forms.ModelForm):
+#     username = forms.CharField(
+#         max_length=Profile.USERNAME_MAX_LENGTH,
+#     )
+#
+#     class Meta:
+#         model = Profile
+#         fields = ('email', 'username', 'password', 'first_name', 'last_name', 'age',)
 
 
+# class DeleteUserForm(forms.ModelForm):
+#     def save(self, commit=True):
+#         self.instance.delete()
+#         return self.instance
+#
+#     class Meta:
+#         model = UserModel
+#         fields = ()

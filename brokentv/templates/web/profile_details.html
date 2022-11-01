@@ -1,0 +1,29 @@
+ <section id="game-details">
+        <h1>Profile Details</h1>
+        <div class="info-section">
+            <div class="game-header">
+
+                <!-- user full name (if any) -->
+                    <h1>{{ profile.username}}</h1>
+                {% if profile.first_name and profile.last_name %}
+                    <h1>{{ profile.first_name}} {{ profile.last_name }}</h1>
+                {% elif profile.first_name %}
+                    <h1>{{ profile.first_name}}</h1>
+                {% elif profile.last_name %}
+                    <h1>{{ profile.last_name}}</h1>
+                {% endif %}
+                <!-- user email -->
+                <p class="text">Email: {{ request.user.email}}</p>
+                <!-- user age -->
+                  {% if profile.age %}
+                <p class="text">Age: {{ profile.age }}</p>
+                    {% endif %}
+                    {% if profile.bio %}
+                <p class="text">Age: {{ profile.bio }}</p>
+                    {% endif %}
+                 <p class="text">Posts: {{ total_posts }}</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
