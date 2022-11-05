@@ -1,9 +1,11 @@
 from django.contrib.auth import login, get_user_model
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 
 from brokentv.accounts.forms import UserRegistrationForm
+from brokentv.accounts.models import Profile
+from brokentv.web.models import Post
 
 UserModel = get_user_model()
 
@@ -46,7 +48,23 @@ class UserLogoutView(LogoutView):
 #     form_class = EditUserProfileForm
 
 
-class UserProfileView:
-    pass
+class ProfileDetailsView(DetailView):
+    model = Profile
+    template_name = 'web/profile_details.html'
+    context_object_name = 'profile'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        posts = list(Post.objects.filter(author=self.object.user))
+
+        total_posts = len(posts)
+
+        context.update({
+            'posts': posts,
+            'total_posts': total_posts,
+        })
+        return context
+
 
 
