@@ -5,6 +5,7 @@
 
                 <!-- user full name (if any) -->
                     <h1>{{ profile.username}}</h1>
+                    <img src="{{ profile.photo.url }}"/>
                 {% if profile.first_name and profile.last_name %}
                     <h1>{{ profile.first_name}} {{ profile.last_name }}</h1>
                 {% elif profile.first_name %}

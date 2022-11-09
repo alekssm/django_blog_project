@@ -48,12 +48,12 @@ class Profile(models.Model):
         # unique=True,
     )
 
-    # photo = models.ImageField(
-    #     upload_to='pet_photos/',
-    #     null=False,
-    #     blank=True,
-    #     validators=(validate_file_less_than_5mb,),
-    # )
+    photo = models.ImageField(
+        default='default_user_profile_image.png',
+        upload_to='profile/',
+        null=False,
+        blank=True,
+    )
 
     bio = models.CharField(
         max_length=BIO_MAX_LEN,
