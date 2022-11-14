@@ -7,3 +7,8 @@ from brokentv.web.models import Post
 
 class ShowIndex(TemplateView):
     template_name = 'web/index.html'
+
+
+class ShowNewIndex(TemplateView):
+    template_name = 'web/index_new.html'
+

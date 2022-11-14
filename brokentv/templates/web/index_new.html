@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,23 +11,23 @@
     <!-- Google fonts - Open Sans-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <!-- gLightbox-->
-    <link rel="stylesheet" href="vendor/glightbox/css/glightbox.css">
+    <link rel="stylesheet" href="{% static 'vendor/glightbox/css/glightbox.css' %} ">
     <!-- Theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
     <!-- gLightbox-->
-    <link rel="stylesheet" href="vendor/glightbox/glightbox.css">
+    <link rel="stylesheet" href="{% static 'vendor/glightbox/css/glightbox.css'%}">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{% static 'css/custom.css'%}">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
-      <div class="container py-1"><a class="navbar-brand text-sm fw-bold text-dark" href="index.html">Bootstrap Blog</a>
+      <div class="container py-1"><a class="navbar-brand text-sm fw-bold text-dark" href="index_new.html">Bootstrap Blog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-            <li class="nav-item"><a class="nav-link active " href="index.html">Home</a>
+            <li class="nav-item"><a class="nav-link active " href="index_new.html">Home</a>
             </li>
             <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a>
             </li>
@@ -60,7 +61,7 @@
       </div>
     </div>
     <!-- Hero Section-->
-    <section class="hero position-relative" style="background: url(img/hero.jpg); background-size: cover; background-position: center center">
+    <section class="hero position-relative" style="background: url({% static 'img/hero.jpg' %}); background-size: cover; background-position: center center">
       <div class="container text-white py-5">
         <div class="row py-lg-5">
           <div class="col-lg-7">
@@ -95,18 +96,18 @@
                 <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                 <ul class="list-inline list-separated text-gray-500 mb-0">
                   <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
-                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="img/avatar-1.jpg" alt="..."/></div><small>John Doe</small></a></li>
+                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{% static 'img/avatar-1.jpg' %}" alt="..."/></div><small>John Doe</small></a></li>
                   <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
                   <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="col-lg-5"><img class="img-fluid" src="img/featured-pic-1.jpeg" alt="..."></div>
+          <div class="col-lg-5"><img class="img-fluid" src="{% static 'img/featured-pic-1.jpeg' %}" alt="..."></div>
         </div>
         <!-- Post        -->
         <div class="row d-flex align-items-stretch g-0">
-          <div class="col-lg-5"><img class="img-fluid" src="img/featured-pic-2.jpeg" alt="..."></div>
+          <div class="col-lg-5"><img class="img-fluid" src="{% static 'img/featured-pic-2.jpeg' %}" alt="..."></div>
           <div class="col-lg-7">
             <div class="text-inner d-flex align-items-center h-100">
               <div class="content px-4 px-lg-5">
@@ -118,7 +119,7 @@
                 <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                 <ul class="list-inline list-separated text-gray-500 mb-0">
                   <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
-                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="img/avatar-2.jpg" alt="..."/></div><small>John Doe</small></a></li>
+                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{% static 'img/avatar-2.jpg' %}" alt="..."/></div><small>John Doe</small></a></li>
                   <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
                   <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
                 </ul>
@@ -139,19 +140,19 @@
                 <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                 <ul class="list-inline list-separated text-gray-500 mb-0">
                   <li class="list-inline-item"><a class="d-flex align-items-center flex-wrap text-reset" href="!#">
-                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="img/avatar-3.jpg" alt="..."/></div><small>John Doe</small></a></li>
+                      <div class="avatar flex-shrink-0"><img class="img-fluid" src="{% static 'img/avatar-3.jpg' %}" alt="..."/></div><small>John Doe</small></a></li>
                   <li class="list-inline-item small"><i class="far fa-clock"></i> 2 months ago</li>
                   <li class="list-inline-item small"><i class="far fa-comment"></i> 12</li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="col-lg-5"><img class="img-fluid" src="img/featured-pic-3.jpeg" alt="..."></div>
+          <div class="col-lg-5"><img class="img-fluid" src="{% static 'img/featured-pic-3.jpeg' %}" alt="..."></div>
         </div>
       </div>
     </section>
     <!-- Divider Section-->
-    <section class="divider" style="background: url(img/divider-bg.jpg); background-size: cover; background-position: center bottom">
+    <section class="divider" style="background: url({% static 'img/divider-bg.jpg' %}); background-size: cover; background-position: center bottom">
       <div class="container text-white">
         <div class="row">
           <div class="col-md-7">
@@ -168,17 +169,17 @@
           <p class="text-lg fw-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </header>
         <div class="row gy-4">
-          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="img/blog-1.jpg" alt="..."/></a>
+          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="{% static 'img/blog-1.jpg' %}" alt="..."/></a>
             <div class="d-flex align-items-center justify-content-between mb-2"><small class="text-gray-500">20 May | 2016</small><a class="small fw-bold text-uppercase small" href="!#">Business</a></div>
             <h3 class="h4"><a class="text-dark" href="post.html">Ways to remember your important ideas</a></h3>
             <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
           </div>
-          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="img/blog-2.jpg" alt="..."/></a>
+          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="{% static 'img/blog-2.jpg' %}" alt="..."/></a>
             <div class="d-flex align-items-center justify-content-between mb-2"><small class="text-gray-500">20 May | 2016</small><a class="small fw-bold text-uppercase small" href="!#">Technology</a></div>
             <h3 class="h4"><a class="text-dark" href="post.html">Diversity in Engineering: Effect on Questions</a></h3>
             <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
           </div>
-          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="img/blog-3.jpg" alt="..."/></a>
+          <div class="col-md-4"><a class="mb-3" href="post.html"><img class="img-fluid" src="{% static 'img/blog-3.jpg' %}" alt="..."/></a>
             <div class="d-flex align-items-center justify-content-between mb-2"><small class="text-gray-500">20 May | 2016</small><a class="small fw-bold text-uppercase small" href="!#">Financial</a></div>
             <h3 class="h4"><a class="text-dark" href="post.html">Alberto Savoia Can Teach You About Interior</a></h3>
             <p class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
@@ -208,13 +209,13 @@
     <!-- Gallery Section-->
     <section class="p-0">
       <div class="row g-0">
-        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="img/gallery-1.jpg" data-gallery="gallery" data-glightbox="Gallery image 1"><img class="img-fluid" src="img/gallery-1.jpg" alt="image">
+        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="{% static 'img/gallery-1.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image 1"><img class="img-fluid" src="{% static 'img/gallery-1.jpg' %}" alt="image">
             <div class="fsc-hover-overlay"><i class="fas fa-search fsc-hover-overlay-icon"></i></div></a></div>
-        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="img/gallery-2.jpg" data-gallery="gallery" data-glightbox="Gallery image 2"><img class="img-fluid" src="img/gallery-2.jpg" alt="image">
+        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="{% static 'img/gallery-2.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image 2"><img class="img-fluid" src="{% static 'img/gallery-2.jpg' %}" alt="image">
             <div class="fsc-hover-overlay"><i class="fas fa-search fsc-hover-overlay-icon"></i></div></a></div>
-        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="img/gallery-3.jpg" data-gallery="gallery" data-glightbox="Gallery image 3"><img class="img-fluid" src="img/gallery-3.jpg" alt="image">
+        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="{% static 'img/gallery-3.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image 3"><img class="img-fluid" src="{% static 'img/gallery-3.jpg' %}" alt="image">
             <div class="fsc-hover-overlay"><i class="fas fa-search fsc-hover-overlay-icon"></i></div></a></div>
-        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="img/gallery-4.jpg" data-gallery="gallery" data-glightbox="Gallery image 4"><img class="img-fluid" src="img/gallery-4.jpg" alt="image">
+        <div class="col-lg-3 col-sm-6"><a class="glightbox d-block position-relative" href="{% static 'img/gallery-4.jpg' %}" data-gallery="gallery" data-glightbox="Gallery image 4"><img class="img-fluid" src="{% static 'img/gallery-4.jpg' %}" alt="image">
             <div class="fsc-hover-overlay"><i class="fas fa-search fsc-hover-overlay-icon"></i></div></a></div>
       </div>
     </section>
@@ -252,17 +253,17 @@
             </div>
           </div>
           <div class="col-md-4"><a class="d-block mb-2" href="post.html">
-              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="img/small-thumbnail-1.jpg" alt="..." width="50">
+              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="{% static 'img/small-thumbnail-1.jpg' %}" alt="..." width="50">
                 <div class="ms-2 text-muted">
                   <p class="fw-bold mb-0">Hotels for all budgets</p><span>October 26, 2016</span>
                 </div>
               </div></a><a class="d-block mb-2" href="post.html">
-              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="img/small-thumbnail-2.jpg" alt="..." width="50">
+              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="{% static 'img/small-thumbnail-2.jpg' %}" alt="..." width="50">
                 <div class="ms-2 text-muted">
                   <p class="fw-bold mb-0">Great street atrs in London</p><span>October 26, 2016</span>
                 </div>
               </div></a><a class="d-block" href="post.html">
-              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="img/small-thumbnail-3.jpg" alt="..." width="50">
+              <div class="d-flex align-items-center"><img class="img-fluid p-1 border border-gray-600 flex-shrink-0" src="{% static 'img/small-thumbnail-3.jpg' %}" alt="..." width="50">
                 <div class="ms-2 text-muted">
                   <p class="fw-bold mb-0">Best coffee shops in Sydney</p><span>October 26, 2016</span>
                 </div>
@@ -286,9 +287,9 @@
       </div>
     </div>
     <!-- JavaScript files-->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/glightbox/glightbox.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </body>
