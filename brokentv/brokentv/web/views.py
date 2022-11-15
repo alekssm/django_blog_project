@@ -12,3 +12,7 @@ class ShowIndex(TemplateView):
 class ShowNewIndex(TemplateView):
     template_name = 'web/index_new.html'
 
+
+class ShowPost(TemplateView):
+    template_name = 'web/post.html'
+
